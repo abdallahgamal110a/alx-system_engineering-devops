@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Bash script that displays
-v=$(ls)
-i=0
-for i in ${v}
+# displays the content of the current working directory.
+
+for i in *
 do
-echo "${i}" | cut =d'-' -f2
+    echo "$i" | cut -d'-' -f2
 done
