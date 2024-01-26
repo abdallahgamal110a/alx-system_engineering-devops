@@ -5,5 +5,4 @@ i=0
 for i in ${v}
 do
 echo "${i}"
-((i++))
 done
