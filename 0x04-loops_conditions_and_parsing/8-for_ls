@@ -4,5 +4,5 @@ v=$(ls)
 i=0
 for i in ${v}
 do
-echo "${i}"
+echo "${i}" | cut =d'-' -f2
 done
