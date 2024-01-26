@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Bash script that displays
+v=$(ls)
+i=0
+for i in ${v}
+do
+echo "${i}"
+((i++))
+done
