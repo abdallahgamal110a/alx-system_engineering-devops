@@ -1,6 +1,8 @@
 # kill process killmenow
 
-exec { 'pkill':
-  command  => 'pkill killmenow',
-  provider => 'shell',
+file { '/tmp/school':
+    content => 'I love Puppet',
+    mode    => '0744',
+    owner   => 'www-data',
+    group   => 'www-data',
 }
