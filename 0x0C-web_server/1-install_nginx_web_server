@@ -1,27 +1,9 @@
 #!/usr/bin/env bash
 # Installs Nginx
 
-apt-get update
-apt-get upgrade -y
-apt-get install nginx -y
-ufw allow 'Nginx HTTP'
-cat <<EOF > /etc/nginx/sites-available/default
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-
-    location = / {
-        echo "Hello World!";
-    }
-}
-EOF
-sudo service nginx restart
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+service nginx restart
