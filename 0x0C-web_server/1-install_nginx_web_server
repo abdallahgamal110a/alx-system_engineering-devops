@@ -5,7 +5,24 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install nginx -y
 ufw allow 'Nignx HTTP'
-sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
-echo "Hello World!" >/var/www/html/index.html
-sudo service nginx restart
-sudo netstat -tuln | grep :80
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location = / {
+        echo "Hello World!";
+    }
+}
+EOF
+
+nginx -s reload
