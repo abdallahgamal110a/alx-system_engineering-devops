@@ -4,7 +4,7 @@
 # Include a custom 404 page that contains a string
 
 ADD301_REDIRECT="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-ADD404_NOTFOUND="\n\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}"
+ADD404_NOTFOUND="\n\\terror_page 404 /eror_page.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}"
 PATTERN="#error_page 404 /eror_page.html;"
 
 
