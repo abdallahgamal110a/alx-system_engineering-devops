@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# install Haproxy
+
+sudo apt-get update
+sudo apt-get -y install haproxy
+sudo chown -R ubuntu /etc/haproxy
+sudo chmod -R 755 /etc/haproxy
+sudo chown -R ubuntu /etc/default
+sudo chmod -R 755 /etc/default
+echo -e "
+frontend http-in
+        bind *:80
+        default_backend servers
+
+backend servers
+        balance roundrobin 
+        server 354433-web-01 35.168.3.253:80 check
+        server 354433-web-02 18.206.206.240:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" >> /etc/default/haproxy
+sudo service haproxy restart
