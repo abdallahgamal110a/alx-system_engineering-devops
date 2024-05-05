@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# duplicate web-01 to web-02
-# these scripts are an upgrade from the web-server scripts...
+# inatall nginx in web-02
 
-# uncomment to see the script run in action
-#set -x
-
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+sudo chown -R ubuntu /var/www/html
+sudo chmod -R 755 /var/www/html
+sudo sed -i "/server_name _;/a\        add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+sudo service nginx reload
