@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #start docker, install image edit in it
 # service apache2 restart
-sudo apt update
-sudo apt install nginx -y
+apt update
+apt install nginx -y
 service nginx start
-sudo n -s  /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+ln -sf  /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 service nginx restart
