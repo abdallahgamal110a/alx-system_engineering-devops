@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION], come back with subdomain and ip.
 pretty_dig() {
     if [ -n "$2" ]; then
     
