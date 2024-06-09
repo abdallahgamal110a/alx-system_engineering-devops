@@ -1,9 +1,5 @@
 ![500 internal server error](https://github.com/abdallahgamal110a/alx-system_engineering-devops/0x19-postmortem/How-to-Fix-500-Internal-Server-Error.png)
 
-#### Summary
-
-On September 11th, 2018 at midnight the server access went down resulting in 504 error for anyone trying to access a website. Background on the server being based on a LAMP stack.
-
 #### Timeline
 
 - **00:00 PST** - 500 error for anyone trying to access the website
