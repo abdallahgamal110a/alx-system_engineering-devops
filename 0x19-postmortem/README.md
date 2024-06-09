@@ -1,4 +1,4 @@
-![500 internal server error](https://github.com/abdallahgamal110a/alx-system_engineering-devops/0x19-postmortem/How-to-Fix-500-Internal-Server-Error.png)
+![500 internal server error](https://github.com/abdallahgamal110a/alx-system_engineering-devops/0x19-postmortem)
 
 #### Timeline
 
